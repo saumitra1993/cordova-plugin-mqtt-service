@@ -3,6 +3,9 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-mqtt-service"
         version="0.1.0">
+    <engines>
+      <engine name="cordova-android" version="&gt;=1.8.0" />
+    </engines>
     <name>MQTTService</name>
     <description>Cordova MQTT Service Plugin</description>
 	<author>Will Lee</author>
@@ -33,6 +36,8 @@
 		<source-file src="libs/android/org.eclipse.paho.client.mqttv3-1.0.2.jar" target-dir="libs" />
 		<source-file src="libs/android/android-support-v4.jar" target-dir="libs" />
 
-        <js-module src="www/mqtt-service.js" name="MQTTService" />
+        <js-module src="www/mqtt-service.js" name="MQTTService" >
+            <clobbers target="mqttClient" />
+        </js-module>
     </platform>
 </plugin>
